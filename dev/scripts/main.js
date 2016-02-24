@@ -20,7 +20,7 @@ const brewAppGoogleApi ='https://maps.googleapis.com/maps/api/'
 
 // Get results
 	// User enters city, save 'val' in variable 
-	
+	// *** CONTAINED WITHIN INIT ***
 
 	// A function to split the string into city and country (check for commas)
 	brewApp.separateVal = function(data) {
@@ -96,6 +96,8 @@ const brewAppGoogleApi ='https://maps.googleapis.com/maps/api/'
 	// When slideToggle is down, add a class to make beer bottle tip over
 
 // Add a button to refresh the results (below search bar)
+
+// BREW APP INIT
 brewApp.init = function() {
 		$('#userLocation').on('submit', function(event) {
 			event.preventDefault();
@@ -106,6 +108,7 @@ brewApp.init = function() {
 
 	};
 
+// DOCUMENT READY 
 $(function() {
 	brewApp.init();
 });
