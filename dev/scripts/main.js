@@ -3,22 +3,24 @@
 const brewApp = {};
 const brewAppApi = 'http://api.brewerydb.com/v2/';
 const brewAppKey = 'c0470cea063039b23d49457fc0120cf0';
+const brewAppGoogleKey ='AIzaSyCPJiNp9WLhIaAVBYrpsPWqCluZWalWjj8';
+const brewAppGoogleApi ='https://maps.googleapis.com/maps/api/'
 
 // Add blank google map on page (default location of Toronto)
 	// Markers to be added after 'submit' of city
+	var map;
+	     function initMap() {
+	       map = new google.maps.Map(document.getElementById('map'), {
+	         center: {lat: 43.6482644, lng: -79.4000474},
+	         zoom: 8
+	       });
+	     }
 
 // Enable auto-complete for cities on text box
 
 // Get results
 	// User enters city, save 'val' in variable 
-	brewApp.init = function() {
-		$('#userLocation').on('submit', function(event) {
-			event.preventDefault();
-			var userInput = $('#location').val();
-			console.log(userInput);
-			brewApp.separateVal(userInput);
-		});
-	};
+	
 
 	// A function to split the string into city and country (check for commas)
 	brewApp.separateVal = function(data) {
@@ -94,6 +96,15 @@ const brewAppKey = 'c0470cea063039b23d49457fc0120cf0';
 	// When slideToggle is down, add a class to make beer bottle tip over
 
 // Add a button to refresh the results (below search bar)
+brewApp.init = function() {
+		$('#userLocation').on('submit', function(event) {
+			event.preventDefault();
+			var userInput = $('#location').val();
+			console.log(userInput);
+			brewApp.separateVal(userInput);
+		});
+
+	};
 
 $(function() {
 	brewApp.init();
