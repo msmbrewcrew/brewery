@@ -1,11 +1,15 @@
 @import 'partials/setup';
 $font-header: 'Six Caps', sans-serif;
+$font-title: 'Hind', sans-serif;
 $font-body: 'Open Sans', sans-serif;
 
 $color-brown:#320F08;
 $color-green:#394F48;
 $color-olive:#65752E;
 $color-cream:#EFDE7F;
+
+// Beer Icon created by Nate Bruzdzinski from the Noun Project
+// Frost Mug created by parkjisun from the Noun Project
 
 @mixin fontSize($sizeValue){
     font-size: $sizeValue * 1px;
@@ -17,8 +21,14 @@ $color-cream:#EFDE7F;
 	flex-flow: row wrap;
 }
 
+html {
+	font-size: 62.5%;
+}
+
 body{
-	background: url();
+	font-size: 16px;
+	color: $color-brown;
+	background: white;
 }
 
 html, body {
@@ -29,3 +39,154 @@ html, body {
       #map {
         height: 200px;
       }
+
+.wrapper {
+	background: url('../assets/background.png');
+}
+
+.innerWrapper {
+	display: flex;
+}
+
+h3 {
+	font-family: $font-title;
+	@include fontSize(22);
+	text-transform: uppercase;
+	font-weight: 700;
+	text-align: right;
+	margin: 0;
+	padding: 0;
+	line-height: 1.1;
+}
+
+p {
+	color: $color-green;
+}
+
+
+// **************************
+// Left Section Styles
+// **************************
+
+section.leftPanel {
+	width: 30%;
+	padding: 40px;
+	background: rgba(240, 222, 136, 0.96);
+	min-height: 100vh;
+	h1 {
+		@include fontSize(120);
+		text-transform: uppercase;
+		font-family: $font-header;
+		letter-spacing: 10px;
+		text-shadow: 3px 2px 2px slategrey;
+		margin: 0;
+		padding: 0;
+		line-height: 1;
+	}
+	p.tagline {
+		@include fontSize(20);
+		margin: 45px 0;
+		color: $color-green;
+	}
+	form {
+		input {
+			padding: 10px;
+		}
+		input[type=text] {
+			width: 80%;
+			border: none;
+		}
+		input[type=submit] {
+			width: 18%;
+			background: $color-olive;
+			border: none;
+		}
+	}
+}
+
+.resultsMain {
+	margin-top: 45px;
+	.breweryListing {
+		border-top: 5px solid $color-brown;
+		padding-top: 15px;
+	}
+	.header {
+		@extend .flex;
+	}
+	.beer {
+		width: 30%;
+		position: relative;
+		img {
+			position: absolute;
+			top: 50%;
+			transform: translate(0%, -50%);  
+		}
+	}
+
+	.breweryHeader {
+		width: 70%;
+		text-align: right;
+		p {
+			padding: 0;
+			margin: 0;
+			@include fontSize(12);
+		}
+	}
+
+	a {
+		text-decoration: none;
+		color: $color-green;
+		font-weight: 700;
+		@include fontSize(12);
+		&:hover {
+			color: $color-brown;
+			border-bottom: 1px dotted $color-brown;
+		}
+	}
+
+	p {
+		@include fontSize(12);
+		padding: 0;
+		margin: 0;
+	}
+
+	p.title {
+		padding: 12px 0 3px;
+		font-weight: 700;
+	}
+
+	.breweryBody {
+		margin: 20px 0 30px;
+		background: lighten(rgba(240, 222, 136, 0.96), 20);
+		border-radius: 15px;
+		padding: 10px;
+	}
+
+}
+
+// **************************
+// Right Section Styles
+// **************************
+
+section.rightPanel {
+	width: 70%;
+	padding: 20px;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	#map {
+		width: 85%;
+		border: 5px solid $color-brown;
+		margin-top: 50px;
+		min-height: 350px;
+	}
+	.featuredResults {
+		background: white;
+		border: 5px solid $color-brown;
+		width: 85%;
+		margin-top: 70px;
+		padding: 20px;
+	}
+}

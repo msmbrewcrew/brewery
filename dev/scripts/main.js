@@ -15,7 +15,7 @@ var shuffleResults;
 	     function initMap() {
 	       map = new google.maps.Map(document.getElementById('map'), {
 	         center: {lat: 43.6482644, lng: -79.4000474},
-	         zoom: 8
+	         zoom: 12
 	       });
 
 	     }//intitial loading map, might go away after design, we might do display none here
@@ -137,7 +137,7 @@ brewApp.getlocation = function(query){
 brewApp.updateMap = function(query1, query2) {
 	       map = new google.maps.Map(document.getElementById('map'), {
 	         center: {lat: query1, lng: query2},
-	         zoom: 8
+	         zoom: 12
 	       });
 	   brewApp.googleMarkers(breweryLocation);
 	     }
