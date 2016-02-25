@@ -44,10 +44,12 @@
 
 	   <div class="featuredHeaderLogo">
 	   		<div class="numberCircle">
-	   			<img src="" alt="">
+	   			<img class="mug" src="assets/mug.png" alt="mug logo">
 	   		</div>
-			<i class="fa fa-map-marker"></i>
-	   		<img src="{{brewery.images.medium}}" alt="{{brewery.name}} logo">
+	
+			<div class="logo">{{#if brewery.images.medium}}	<img src="{{brewery.images.medium}}" alt="{{brewery.name}} logo">{{/if }}
+			</div>
+
 	   		<div class="plusSign">
 	   			<div class="line1"></div>
 	   			<div class="line2"></div>
@@ -56,7 +58,11 @@
 
 		<div class="featuredBreweryHeader">
 			<h3>{{brewery.name}}</h3>
-			<p> EST: {{brewery.established}}</p>
+			<p>
+				{{#if brewery.established}}
+				EST: {{brewery.established}}
+				{{/if}}
+			</p>
 		</div>
 		
 		<div class="featuredBreweryBody">

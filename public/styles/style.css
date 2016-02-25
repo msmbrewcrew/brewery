@@ -128,7 +128,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 * {
   box-sizing: border-box; }
 
-.flex, .resultsMain .header {
+.flex, .resultsMain .header, .featuredHeaderLogo, .featuredBreweryHeader {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -170,6 +170,16 @@ h3 {
   padding: 0;
   line-height: 1.1; }
 
+h2 {
+  font-family: "Hind", sans-serif;
+  text-align: center;
+  text-shadow: 3px 2px 2px slategrey;
+  text-transform: uppercase;
+  font-size: 40px;
+  font-size: 4rem;
+  padding: 0;
+  margin: 0; }
+
 p {
   color: #394F48; }
 
@@ -201,13 +211,19 @@ section.leftPanel {
   section.leftPanel form input[type=submit] {
     width: 18%;
     background: #65752E;
-    border: none; }
+    border: none;
+    background-image: url("../assets/marker.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50%; }
 
 .resultsMain {
   margin-top: 45px; }
   .resultsMain .breweryListing {
     border-top: 5px solid #320F08;
     padding-top: 15px; }
+  .resultsMain .header {
+    padding: 5px 0; }
   .resultsMain .beer {
     width: 30%;
     position: relative; }
@@ -271,5 +287,65 @@ section.rightPanel {
     width: 85%;
     margin-top: 70px;
     padding: 20px; }
+
+.featuredHeaderLogo {
+  border-top: 5px solid #320F08; }
+  .featuredHeaderLogo .numberCircle {
+    border: 5px solid #320F08;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: relative; }
+  .featuredHeaderLogo .line1, .featuredHeaderLogo .line2 {
+    height: 5px;
+    width: 60px;
+    border: 5px solid #320F08; }
+  .featuredHeaderLogo img.mug {
+    position: absolute;
+    width: 70%;
+    bottom: 50%;
+    right: 50%;
+    -webkit-transform: translate(50%, 50%);
+            transform: translate(50%, 50%); }
+
+.logo {
+  width: 175px;
+  height: 50px; }
+  .logo img {
+    width: 100%; }
+
+.featuredBreweryHeader h3 {
+  text-align: left;
+  width: 70%; }
+
+.featuredBreweryHeader p {
+  text-transform: uppercase;
+  width: 30%; }
+
+.featuredBreweryBody a {
+  text-decoration: none;
+  color: #394F48;
+  font-weight: 700;
+  font-size: 12px;
+  font-size: 1.2rem; }
+  .featuredBreweryBody a:hover {
+    color: #320F08;
+    border-bottom: 1px dotted #320F08; }
+
+.featuredBreweryBody p {
+  font-size: 12px;
+  font-size: 1.2rem;
+  padding: 0;
+  margin: 0; }
+
+.featuredBreweryBody p.title {
+  padding: 12px 0 3px;
+  font-weight: 700; }
+
+.featuredBreweryBody .breweryBody {
+  margin: 20px 0 30px;
+  background: rgba(251, 247, 227, 0.96);
+  border-radius: 15px;
+  padding: 10px; }
 
 /*# sourceMappingURL=style.css.map */
