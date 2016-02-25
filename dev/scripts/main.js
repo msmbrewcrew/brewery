@@ -7,6 +7,8 @@ const brewAppGoogleKey ='AIzaSyCPJiNp9WLhIaAVBYrpsPWqCluZWalWjj8';
 const brewAppGoogleApi ='https://maps.googleapis.com/maps/api/';
 var city;
 var breweryLocation = [];
+var userResults; 
+var shuffleResults;
 // Add blank google map on page (default location of Toronto)
 	// Markers to be added after 'submit' of city
 	var map;
@@ -55,6 +57,16 @@ var breweryLocation = [];
 		brewApp.getInfo(city, country);//feed into next function 
 	};
 
+	// 	Shuffle the array of results
+brewApp.shuffle = function(array) {
+	for (var i = array.length - 1; i > 0; i--) {
+		   var j = Math.floor(Math.random() * (i + 1));
+		   var temp = array[i];
+		   array[i] = array[j];
+		   array[j] = temp;
+	   }
+	return array;
+};
 	// Use variable to make AJAX request to brewery API for all breweries in that city (using HackerYou Proxy)
 
 
@@ -74,9 +86,12 @@ var breweryLocation = [];
 		}).then(function(res) {
 			// Save the results in an array
 			
-			var userResults = res.data; // go inside the results that ajax call gave us from API and give us just the array featuring data. 
+			userResults = res.data; // go inside the results that ajax call gave us from API and give us just the array featuring data. 
 			brewApp.filterArray(userResults);
 			console.log(userResults);
+			shuffleResults = brewApp.shuffle(userResults);
+			// console.log(shuffleResults);
+
 
 		});
 		// Add in a message if no results
@@ -154,18 +169,45 @@ brewApp.googleMarkers = function(markers){
 		});
 	};
 	setMarkers(map);
+	brewApp.displayFeaturedResults(shuffleResults);
+
 };
 
 
     // console.log(origin1);
 
-// Add listing of breweries on left side
-	// 	Shuffle the array of results
+    Handlebars.registerHelper("inc", function(value, options)
+    {
+        return parseInt(value) + 1;
+    });
+
+// featured results 
+brewApp.displayFeaturedResults = function(brewdata) {
+
+	var featuredHtml = $('#featuredResults').html();
+	var template = Handlebars.compile(featuredHtml);
+	for (var i=0; i<3; i++){
+		$('#results').append( template(brewdata[i]) );
+		console.log(brewdata[i]);
+	}
+	brewApp.displayLeftResults(shuffleResults); 
+};
 	// Add the first 3 results to featured
 		// Build a handlebar template in our HTML
 			// Some information should be 'IF' in case note each brewery has that information available (ex. logo, established date)
 		// Using a for loop, run the first 3 results through the handlebar templates
 	// Add the remaining results to the list on the left side of the screen
+	brewApp.displayLeftResults = function(brewdata) {
+
+	var featuredHtml = $('#beerResults').html();
+	var template = Handlebars.compile(featuredHtml);
+	for (var i=3; i<brewdata.length; i++){
+		$('div.resultsMain').append( template(brewdata[i]) );
+		console.log(brewdata[i]);
+	}
+	 
+};
+
 		// Build a handlebar template in our HTML
 		// Using a for loop (starting at i = 3), run the results through the handlebar templates
 

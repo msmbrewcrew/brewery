@@ -22,8 +22,10 @@
 				<p>{{streetAddress}}</p>
 				<p>{{locality}}, {{region}} {{postalCode}}</p>
 				<p>{{country.displayName}}</p>
+				{{#if hoursOfOperation}}
 				<p class="title">Hours of Operation</p>
 				<p>{{hoursOfOperation}}</p>
+				{{/if}}
 			</div>
 	   </div>
    </script>
@@ -33,9 +35,7 @@
 
 	   <div class="featuredHeaderLogo">
 	   		<div class="numberCircle">
-	   			<h3>
-	   				{{inc @index}}
-	   			</h3>
+	   			<img src="" alt="">
 	   		</div>
 
 	   		<img src="{{brewery.images.medium}}" alt="{{brewery.name}} logo">
@@ -59,8 +59,10 @@
 			<p>{{streetAddress}}</p>
 			<p>{{locality}}, {{region}} {{postalCode}}</p>
 			<p>{{country.displayName}}</p>
-			<p class="title">Hours of Operation</p>
-			<p>{{hoursOfOperation}}</p>
+			{{#if hoursOfOperation}}
+				<p class="title">Hours of Operation</p>
+				<p>{{hoursOfOperation}}</p>
+				{{/if}}
 		</div>
    </div>
 
@@ -83,7 +85,7 @@
 		<div id="map"></div>
 		<section class="featuredResults">
 			<h2>Featured:</h2>
-			<div class="results"></div>
+			<div class="results" id="results"></div>
 		</section>
 
 	</section>
