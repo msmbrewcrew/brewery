@@ -77,6 +77,7 @@ var breweryLocation = [];
 			var userResults = res.data; // go inside the results that ajax call gave us from API and give us just the array featuring data. 
 			brewApp.filterArray(userResults);
 			console.log(userResults);
+
 		});
 		// Add in a message if no results
 	};
@@ -93,7 +94,6 @@ brewApp.filterArray = function(breweryResults){
 		var name = brewery.brewery.name;
 		var lat = brewery.latitude;
 		var lng = brewery.longitude; 
-
 		var arrayResults = [name , lat, lng];
 		breweryLocation.push(arrayResults);
 	});

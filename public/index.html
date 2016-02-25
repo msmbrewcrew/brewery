@@ -3,19 +3,99 @@
 <head>
 	<meta charset="UTF-8">
 	<title>BrewMe</title>
-	<link rel="stylesheet" href="styles/style.css">
+	<link rel="stylesheet" href="styles/style.css"> 
+
+	<script id="beerResults" type="x-handlebar-template">
+	   <div class="breweryListing">
+			<div class="breweryHeader">
+				<img src="" alt="">
+				<h3>{{brewery.name}}</h3>
+				<p> EST: {{brewery.established}}</p>
+			</div>
+			
+			<div class="breweryBody">
+				<p>
+					<a href="{{brewery.website}}">{{brewery.website}}
+					</a>
+				</p>
+				<p class="title">Address:</p>
+				<p>{{streetAddress}}</p>
+				<p>{{locality}}, {{region}} {{postalCode}}</p>
+				<p>{{country.displayName}}</p>
+				<p class="title">Hours of Operation</p>
+				<p>{{hoursOfOperation}}</p>
+			</div>
+	   </div>
+   </script>
+
+   <script id="featuredResults" type="x-handlebar-template">
+   		<div class="featuredBreweryListing">
+
+	   <div class="featuredHeaderLogo">
+	   		<div class="numberCircle">
+	   			<h3>
+	   				{{inc @index}}
+	   			</h3>
+	   		</div>
+
+	   		<img src="{{brewery.images.medium}}" alt="{{brewery.name}} logo">
+	   		<div class="plusSign">
+	   			<div class="line1"></div>
+	   			<div class="line2"></div>
+	   		</div>
+	   </div>
+
+		<div class="featuredBreweryHeader">
+			<h3>{{brewery.name}}</h3>
+			<p> EST: {{brewery.established}}</p>
+		</div>
+		
+		<div class="featuredBreweryBody">
+			<p>
+				<a href="{{brewery.website}}">{{brewery.website}}
+				</a>
+			</p>
+			<p class="title">Address:</p>
+			<p>{{streetAddress}}</p>
+			<p>{{locality}}, {{region}} {{postalCode}}</p>
+			<p>{{country.displayName}}</p>
+			<p class="title">Hours of Operation</p>
+			<p>{{hoursOfOperation}}</p>
+		</div>
+   </div>
+
+   </script>
+
 </head>
 <body>
+	<section class="leftPanel">
+		<form id="userLocation">
+			<input id="location" type="text" placeholder="Enter your city and country" class="location">
+			<input type="submit" value="search" class="search">
+		</form>
 
-	<form id="userLocation">
-		<input id="location" type="text" placeholder="Enter your city and country" class="location">
-		<input type="submit" value="search" class="search">
-	</form>
-	<div id="map"></div>
+		<section class="resultLeft">
+			<div class="resultsMain"></div>
+		</section>
+	</section>
+
+	<section class="rightPanel">
+		<div id="map"></div>
+		<section class="featuredResults">
+			<h2>Featured:</h2>
+			<div class="results"></div>
+		</section>
+
+	</section>
+
+
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJiNp9WLhIaAVBYrpsPWqCluZWalWjj8&callback=initMap"
    async defer></script>
+
+
 <!--    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPJiNp9WLhIaAVBYrpsPWqCluZWalWjj8" async defer>
         </script> -->
 	<script src="scripts/main.js"></script>
