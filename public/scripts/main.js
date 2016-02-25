@@ -10,13 +10,12 @@ var breweryLocation = [];
 // Add blank google map on page (default location of Toronto)
 // Markers to be added after 'submit' of city
 var map;
-// function initMap() {
-//   map = new google.maps.Map(document.getElementById('map'), {
-//     center: {lat: 43.6482644, lng: -79.4000474},
-//     zoom: 8
-//   });
-
-// }//intitial loading map, might go away after design, we might do display none here
+function initMap() {
+	map = new google.maps.Map(document.getElementById('map'), {
+		center: { lat: 43.6482644, lng: -79.4000474 },
+		zoom: 8
+	});
+} //intitial loading map, might go away after design, we might do display none here
 
 // Enable auto-complete for cities on text box
 
