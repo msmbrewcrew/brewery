@@ -4,18 +4,27 @@
 	<meta charset="UTF-8">
 	<title>BrewMe</title>
 	<link rel="stylesheet" href="styles/style.css"> 
-	<link href='https://fonts.googleapis.com/css?family=Six+Caps|Open+Sans' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Six+Caps|Open+Sans:400,700,800|Hind:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<script id="beerResults" type="x-handlebar-template">
 	   <div class="breweryListing">
-			<div class="breweryHeader">
-				<img src="" alt="">
-				<h3>{{brewery.name}}</h3>
-				<p> EST: {{brewery.established}}</p>
+			<div class="header">
+				<div class="beer">
+					<img src="assets/beer.png" alt="">
+				</div>
+				<div class="breweryHeader">
+					<h3>{{brewery.name}}</h3>
+					<p>
+					{{#if brewery.established}}
+					EST: {{brewery.established}}
+					{{/if}}
+					</p>
+				</div>
 			</div>
 			
 			<div class="breweryBody">
 				<p>
-					<a href="{{brewery.website}}">{{brewery.website}}
+					<a href="{{brewery.website}}">Brewery Website
 					</a>
 				</p>
 				<p class="title">Address:</p>
@@ -37,7 +46,7 @@
 	   		<div class="numberCircle">
 	   			<img src="" alt="">
 	   		</div>
-
+			<i class="fa fa-map-marker"></i>
 	   		<img src="{{brewery.images.medium}}" alt="{{brewery.name}} logo">
 	   		<div class="plusSign">
 	   			<div class="line1"></div>
@@ -52,7 +61,7 @@
 		
 		<div class="featuredBreweryBody">
 			<p>
-				<a href="{{brewery.website}}">{{brewery.website}}
+				<a href="{{brewery.website}}">Brewery Website
 				</a>
 			</p>
 			<p class="title">Address:</p>
@@ -70,25 +79,31 @@
 
 </head>
 <body>
-	<section class="leftPanel">
-		<form id="userLocation">
-			<input id="location" type="text" placeholder="Enter your city and country" class="location">
-			<input type="submit" value="search" class="search">
-		</form>
-
-		<section class="resultLeft">
-			<div class="resultsMain"></div>
-		</section>
-	</section>
-
-	<section class="rightPanel">
-		<div id="map"></div>
-		<section class="featuredResults">
-			<h2>Featured:</h2>
-			<div class="results" id="results"></div>
-		</section>
-
-	</section>
+	<div class="wrapper">
+		<div class="innerWrapper">
+			<section class="leftPanel">
+				<h1>Brew Me</h1>
+				<p class="tagline">Find local breweries near you!</p>
+				<form id="userLocation">
+					<input id="location" type="text" placeholder="Enter your city and country" class="location">
+					<input type="submit" value=" " class="search">
+				</form>
+			
+				<section class="resultLeft">
+					<div class="resultsMain"></div>
+				</section>
+			</section>
+			
+			<section class="rightPanel">
+				<div id="map"></div>
+				<section class="featuredResults">
+					<h2>Featured:</h2>
+					<div class="results" id="results"></div>
+				</section>
+			
+			</section>
+		</div>
+	</div>
 
 
 
