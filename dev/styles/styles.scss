@@ -1,4 +1,25 @@
 @import 'partials/setup';
+$font-header: 'Six Caps', sans-serif;
+$font-body: 'Open Sans', sans-serif;
+
+$color-brown:#320F08;
+$color-green:#394F48;
+$color-olive:#65752E;
+$color-cream:#EFDE7F;
+
+@mixin fontSize($sizeValue){
+    font-size: $sizeValue * 1px;
+    font-size: ($sizeValue/10) * 1rem;
+}
+
+.flex {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+body{
+	background: url();
+}
 
 html, body {
         // height: 100%;
