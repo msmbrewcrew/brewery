@@ -205,8 +205,19 @@ brewApp.displayFeaturedResults = function(brewdata) {
 		$('div.resultsMain').append( template(brewdata[i]) );
 		console.log(brewdata[i]);
 	}
+
+	$('button.headerButton').on('click', function() {
+		var body = $(this).next('.breweryBody');
+		body.slideToggle();
+	});
+
+	$('button.featuredHeaderButton').on('click', function() {
+		var featureBody = $(this).next('.featuredBreweryBody');
+		featureBody.slideToggle();
+	});
+
+	};
 	 
-};
 
 		// Build a handlebar template in our HTML
 		// Using a for loop (starting at i = 3), run the results through the handlebar templates
@@ -230,4 +241,6 @@ brewApp.init = function() {
 // DOCUMENT READY 
 $(function() {
 	brewApp.init();
+
+	
 });

@@ -142,7 +142,7 @@ html {
 body {
   font-size: 16px;
   color: #320F08;
-  background: white; }
+  background: #c9d798; }
 
 html, body {
   margin: 0;
@@ -183,8 +183,16 @@ h2 {
 p {
   color: #394F48; }
 
+button {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  width: 100%; }
+  button:focus {
+    outline: none; }
+
 section.leftPanel {
-  width: 30%;
+  width: 40%;
   padding: 40px;
   background: rgba(240, 222, 136, 0.96);
   min-height: 100vh; }
@@ -215,7 +223,7 @@ section.leftPanel {
     background-image: url("../assets/marker.png");
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 50%; }
+    background-size: 35%; }
 
 .resultsMain {
   margin-top: 45px; }
@@ -264,7 +272,7 @@ section.leftPanel {
     padding: 10px; }
 
 section.rightPanel {
-  width: 70%;
+  width: 60%;
   padding: 20px;
   min-height: 100vh;
   display: -webkit-flex;
@@ -280,7 +288,7 @@ section.rightPanel {
     width: 85%;
     border: 5px solid #320F08;
     margin-top: 50px;
-    min-height: 350px; }
+    min-height: 400px; }
   section.rightPanel .featuredResults {
     background: white;
     border: 5px solid #320F08;
@@ -289,17 +297,35 @@ section.rightPanel {
     padding: 20px; }
 
 .featuredHeaderLogo {
-  border-top: 5px solid #320F08; }
+  border-top: 5px solid #320F08;
+  padding: 20px 0;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+              -ms-grid-row-align: center;
+          align-items: center; }
   .featuredHeaderLogo .numberCircle {
     border: 5px solid #320F08;
     border-radius: 50%;
     width: 50px;
     height: 50px;
     position: relative; }
-  .featuredHeaderLogo .line1, .featuredHeaderLogo .line2 {
-    height: 5px;
-    width: 60px;
-    border: 5px solid #320F08; }
+  .featuredHeaderLogo .plusSign {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    .featuredHeaderLogo .plusSign .line1, .featuredHeaderLogo .plusSign .line2 {
+      height: 3px;
+      width: 40px;
+      border: 5px solid #320F08; }
+    .featuredHeaderLogo .plusSign .line2 {
+      -webkit-transform: rotate(90deg) translate(-10px, 0);
+              transform: rotate(90deg) translate(-10px, 0); }
   .featuredHeaderLogo img.mug {
     position: absolute;
     width: 70%;
@@ -314,38 +340,48 @@ section.rightPanel {
   .logo img {
     width: 100%; }
 
-.featuredBreweryHeader h3 {
-  text-align: left;
-  width: 70%; }
+.featuredBreweryHeader {
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+              -ms-grid-row-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  .featuredBreweryHeader h3 {
+    text-align: left;
+    width: 70%; }
+  .featuredBreweryHeader p {
+    text-transform: uppercase;
+    width: 30%;
+    text-align: right; }
 
-.featuredBreweryHeader p {
-  text-transform: uppercase;
-  width: 30%; }
-
-.featuredBreweryBody a {
-  text-decoration: none;
-  color: #394F48;
-  font-weight: 700;
-  font-size: 12px;
-  font-size: 1.2rem; }
-  .featuredBreweryBody a:hover {
-    color: #320F08;
-    border-bottom: 1px dotted #320F08; }
-
-.featuredBreweryBody p {
-  font-size: 12px;
-  font-size: 1.2rem;
-  padding: 0;
-  margin: 0; }
-
-.featuredBreweryBody p.title {
-  padding: 12px 0 3px;
-  font-weight: 700; }
-
-.featuredBreweryBody .breweryBody {
-  margin: 20px 0 30px;
+.featuredBreweryBody {
+  padding: 20px 10px;
   background: rgba(251, 247, 227, 0.96);
-  border-radius: 15px;
-  padding: 10px; }
+  border-radius: 20px;
+  margin: 15px 0; }
+  .featuredBreweryBody a {
+    text-decoration: none;
+    color: #394F48;
+    font-weight: 700;
+    font-size: 12px;
+    font-size: 1.2rem; }
+    .featuredBreweryBody a:hover {
+      color: #320F08;
+      border-bottom: 1px dotted #320F08; }
+  .featuredBreweryBody p {
+    font-size: 12px;
+    font-size: 1.2rem;
+    padding: 0;
+    margin: 0; }
+  .featuredBreweryBody p.title {
+    padding: 12px 0 3px;
+    font-weight: 700; }
+  .featuredBreweryBody .breweryBody {
+    margin: 20px 0 30px;
+    background: rgba(251, 247, 227, 0.96);
+    border-radius: 15px;
+    padding: 10px; }
 
 /*# sourceMappingURL=style.css.map */
