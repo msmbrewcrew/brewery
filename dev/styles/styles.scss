@@ -42,7 +42,7 @@ html, body {
 
 .wrapper {
 	background: url('../assets/background2.png');
-	background-size: 10%;
+	background-size: 100px;
 }
 
 .innerWrapper {
@@ -93,11 +93,11 @@ button {
 
 section.leftPanel {
 	width: 40%;
-	padding: 40px;
+	padding: 40px 20px;
 	background: rgba(240, 222, 136, 0.96);
 	min-height: 100vh;
 	h1 {
-		@include fontSize(120);
+		@include fontSize(90);
 		text-transform: uppercase;
 		font-family: $font-header;
 		letter-spacing: 10px;
@@ -107,16 +107,17 @@ section.leftPanel {
 		line-height: 1;
 	}
 	p.tagline {
-		@include fontSize(20);
+		@include fontSize(16);
 		margin: 45px 0;
 		color: $color-green;
 	}
 	form {
 		input {
 			padding: 10px;
+			@include fontSize(12);
 		}
 		input[type=text] {
-			width: 80%;
+			width: 78%;
 			border: none;
 		}
 		input[type=submit] {
@@ -126,7 +127,7 @@ section.leftPanel {
 			background-image: url("../assets/marker.png");
 			background-repeat: no-repeat;
 			background-position: center center;
-			background-size: 35%;
+			background-size: 22px;
 		}
 	}
 }
@@ -346,6 +347,67 @@ section.rightPanel {
 		padding: 10px;
 	}
 }
+// **************************
+// MEDIA QUERIES
+// **************************
+	@media (max-width: 900px){
+
+	}
 
 
+	@media (max-width: 870px) {
+	    section.rightPanel #map {
+	      width: 100%;
+	      border:none;
+	      border-bottom: 5px solid $color-brown;
+	      border-top: 5px solid $color-brown;
+	    }
+	    section.rightPanel {
+	      padding: 20px 0;
+	    }
+		
+		section.leftPanel h1 {
+			@include fontSize(90);
+		}
 
+		section.leftPanel p.tagline {
+			@include fontSize(16);
+		}
+
+		section.leftPanel form {
+			input {
+				@include fontSize(12);
+			}
+		}
+	}
+
+	@media (max-width: 755px) {
+		section.leftPanel form input[type=text] {
+		width: 100%;
+		margin-bottom:10px
+		}
+		section.leftPanel form input[type=submit]{
+		width: 100%;
+		background-size: 26px;
+		}
+
+		section.leftPanel h1 {
+			@include fontSize(65);
+		}
+
+		section.leftPanel p.tagline {
+			@include fontSize(13);
+			margin:30px 0;
+		}
+
+		h3 {
+			@include fontSize(18);
+		}
+		
+
+	}
+
+	@media (max-width: 650px ){
+
+
+	}

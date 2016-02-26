@@ -153,7 +153,7 @@ html, body {
 
 .wrapper {
   background: url("../assets/background2.png");
-  background-size: 10%; }
+  background-size: 100px; }
 
 .innerWrapper {
   display: -webkit-flex;
@@ -197,12 +197,12 @@ button {
 
 section.leftPanel {
   width: 40%;
-  padding: 40px;
+  padding: 40px 20px;
   background: rgba(240, 222, 136, 0.96);
   min-height: 100vh; }
   section.leftPanel h1 {
-    font-size: 120px;
-    font-size: 12rem;
+    font-size: 90px;
+    font-size: 9rem;
     text-transform: uppercase;
     font-family: "Six Caps", sans-serif;
     letter-spacing: 10px;
@@ -211,14 +211,16 @@ section.leftPanel {
     padding: 0;
     line-height: 1; }
   section.leftPanel p.tagline {
-    font-size: 20px;
-    font-size: 2rem;
+    font-size: 16px;
+    font-size: 1.6rem;
     margin: 45px 0;
     color: #394F48; }
   section.leftPanel form input {
-    padding: 10px; }
+    padding: 10px;
+    font-size: 12px;
+    font-size: 1.2rem; }
   section.leftPanel form input[type=text] {
-    width: 80%;
+    width: 78%;
     border: none; }
   section.leftPanel form input[type=submit] {
     width: 18%;
@@ -227,7 +229,7 @@ section.leftPanel {
     background-image: url("../assets/marker.png");
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 35%; }
+    background-size: 22px; }
 
 .resultsMain {
   margin-top: 45px; }
@@ -408,5 +410,41 @@ section.rightPanel {
     background: rgba(251, 247, 227, 0.96);
     border-radius: 15px;
     padding: 10px; }
+
+@media (max-width: 870px) {
+  section.rightPanel #map {
+    width: 100%;
+    border: none;
+    border-bottom: 5px solid #320F08;
+    border-top: 5px solid #320F08; }
+  section.rightPanel {
+    padding: 20px 0; }
+  section.leftPanel h1 {
+    font-size: 90px;
+    font-size: 9rem; }
+  section.leftPanel p.tagline {
+    font-size: 16px;
+    font-size: 1.6rem; }
+  section.leftPanel form input {
+    font-size: 12px;
+    font-size: 1.2rem; } }
+
+@media (max-width: 755px) {
+  section.leftPanel form input[type=text] {
+    width: 100%;
+    margin-bottom: 10px; }
+  section.leftPanel form input[type=submit] {
+    width: 100%;
+    background-size: 26px; }
+  section.leftPanel h1 {
+    font-size: 65px;
+    font-size: 6.5rem; }
+  section.leftPanel p.tagline {
+    font-size: 13px;
+    font-size: 1.3rem;
+    margin: 30px 0; }
+  h3 {
+    font-size: 18px;
+    font-size: 1.8rem; } }
 
 /*# sourceMappingURL=style.css.map */
