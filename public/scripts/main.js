@@ -9,6 +9,8 @@ var city;
 var breweryLocation = [];
 var userResults;
 var shuffleResults;
+var userCountry;
+
 // Add blank google map on page (default location of Toronto)
 // Markers to be added after 'submit' of city
 var map;
@@ -35,7 +37,7 @@ brewApp.separateVal = function (data) {
 		separatedUserInput = data.split(" "); //if there is a space, then split wit with a comma
 	}
 	var userCity = separatedUserInput[0];
-	var userCountry = separatedUserInput[1]; // seperating city and country with the one above it.
+	userCountry = separatedUserInput[1]; // seperating city and country with the one above it.
 	brewApp.countryCodes(userCity, userCountry); // feeding into the next function.
 };
 
@@ -109,16 +111,16 @@ brewApp.filterArray = function (breweryResults) {
 		breweryLocation.push(arrayResults);
 	});
 	console.log(breweryLocation);
-	brewApp.getlocation(city);
+	brewApp.getlocation(city, userCountry);
 };
 //getting the lat lng of the city that the user input into the input field
-brewApp.getlocation = function (query) {
+brewApp.getlocation = function (query, query2) {
 	$.ajax({
 		url: 'https://maps.googleapis.com/maps/api/geocode/json',
 		type: 'GET',
 		dataType: 'json',
 		data: {
-			address: query
+			address: query + query2
 		}
 	}).then(function (result) {
 		var lat = result.results[0].geometry.location.lat;
