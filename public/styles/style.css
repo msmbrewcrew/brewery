@@ -152,7 +152,8 @@ html, body {
   height: 200px; }
 
 .wrapper {
-  background: url("../assets/background.png"); }
+  background: url("../assets/background2.png");
+  background-size: 10%; }
 
 .innerWrapper {
   display: -webkit-flex;
@@ -190,6 +191,9 @@ button {
   width: 100%; }
   button:focus {
     outline: none; }
+
+.hidden {
+  display: none; }
 
 section.leftPanel {
   width: 40%;
@@ -231,6 +235,12 @@ section.leftPanel {
     border-top: 5px solid #320F08; }
   .resultsMain .header {
     padding: 15px 0; }
+    .resultsMain .header:hover > .beer > img {
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      -webkit-transform: translate(0%, -50%) rotate(90deg);
+              transform: translate(0%, -50%) rotate(90deg); }
   .resultsMain .beer {
     width: 30%;
     position: relative; }
@@ -239,7 +249,14 @@ section.leftPanel {
       top: 50%;
       left: 15px;
       -webkit-transform: translate(0%, -50%);
-              transform: translate(0%, -50%); }
+              transform: translate(0%, -50%);
+      transition: all 0.5s ease; }
+    .resultsMain .beer img.toggled {
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      -webkit-transform: translate(0%, -50%) rotate(90deg);
+              transform: translate(0%, -50%) rotate(90deg); }
   .resultsMain .breweryHeader {
     width: 70%;
     text-align: right; }
@@ -307,6 +324,8 @@ section.rightPanel {
       -ms-flex-align: center;
               -ms-grid-row-align: center;
           align-items: center; }
+  .featuredHeaderLogo:hover > .plusSign > .line2 {
+    opacity: 0; }
   .featuredHeaderLogo .numberCircle {
     border: 5px solid #320F08;
     border-radius: 50%;
@@ -326,7 +345,11 @@ section.rightPanel {
       border: 5px solid #320F08; }
     .featuredHeaderLogo .plusSign .line2 {
       -webkit-transform: rotate(90deg) translate(-10px, 0);
-              transform: rotate(90deg) translate(-10px, 0); }
+              transform: rotate(90deg) translate(-10px, 0);
+      opacity: 1;
+      transition: all 0.5s ease; }
+    .featuredHeaderLogo .plusSign .visHidden {
+      visibility: hidden; }
   .featuredHeaderLogo img.mug {
     position: absolute;
     width: 70%;

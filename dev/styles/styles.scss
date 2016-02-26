@@ -41,7 +41,8 @@ html, body {
       }
 
 .wrapper {
-	background: url('../assets/background.png');
+	background: url('../assets/background2.png');
+	background-size: 10%;
 }
 
 .innerWrapper {
@@ -80,6 +81,9 @@ button {
 	&:focus {
 		outline: none;
 	}
+}
+.hidden {
+	display: none;
 }
 
 
@@ -135,6 +139,14 @@ section.leftPanel {
 	.header {
 		@extend .flex;
 		padding: 15px 0;
+		// on hover, go inside the class of beer within header and go inside of that go to image,
+		// translate will do calc for you because on position absolute will just target the top corner of the image so this way it will be centered -%50 of the image, so here we just cared that it was horizontally centered hense the zero on the other one. 
+		&:hover > .beer > img {
+			position: absolute;
+			top: 50%;
+			left: 15px;
+			transform: translate(0%, -50%) rotate(90deg);  
+		}
 	}
 	.beer {
 		width: 30%;
@@ -143,7 +155,14 @@ section.leftPanel {
 			position: absolute;
 			top: 50%;
 			left: 15px;
-			transform: translate(0%, -50%);  
+			transform: translate(0%, -50%);
+			transition: all 0.5s ease;
+		}
+		img.toggled {
+			position: absolute;
+			top: 50%;
+			left: 15px;
+			transform: translate(0%, -50%) rotate(90deg);  	
 		}
 	}
 
@@ -226,7 +245,10 @@ section.rightPanel {
 	justify-content:space-between;
 	align-items: center;
 
-	@extend .flex;	
+	@extend .flex;
+	&:hover > .plusSign > .line2 {
+		opacity: 0;
+	}
 
 	.numberCircle {
 	border: 5px solid $color-brown;	
@@ -247,7 +269,12 @@ section.rightPanel {
 	}
 		.line2 {
 		transform: rotate(90deg) translate(-10px,0);
+		opacity: 1;
+		transition: all 0.5s ease;
+		}
 
+		.visHidden {
+			visibility: hidden;
 		}
 	}
 
