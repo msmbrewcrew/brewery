@@ -228,16 +228,16 @@ section.leftPanel {
 .resultsMain {
   margin-top: 45px; }
   .resultsMain .breweryListing {
-    border-top: 5px solid #320F08;
-    padding-top: 15px; }
+    border-top: 5px solid #320F08; }
   .resultsMain .header {
-    padding: 5px 0; }
+    padding: 15px 0; }
   .resultsMain .beer {
     width: 30%;
     position: relative; }
     .resultsMain .beer img {
       position: absolute;
       top: 50%;
+      left: 15px;
       -webkit-transform: translate(0%, -50%);
               transform: translate(0%, -50%); }
   .resultsMain .breweryHeader {
@@ -269,7 +269,8 @@ section.leftPanel {
     margin: 20px 0 30px;
     background: rgba(251, 247, 227, 0.96);
     border-radius: 15px;
-    padding: 10px; }
+    padding: 10px;
+    display: none; }
 
 section.rightPanel {
   width: 60%;
@@ -360,7 +361,8 @@ section.rightPanel {
   padding: 20px 10px;
   background: rgba(251, 247, 227, 0.96);
   border-radius: 20px;
-  margin: 15px 0; }
+  margin: 15px 0;
+  display: none; }
   .featuredBreweryBody a {
     text-decoration: none;
     color: #394F48;

@@ -131,11 +131,10 @@ section.leftPanel {
 	margin-top: 45px;
 	.breweryListing {
 		border-top: 5px solid $color-brown;
-		padding-top: 15px;
 	}
 	.header {
 		@extend .flex;
-		padding: 5px 0;
+		padding: 15px 0;
 	}
 	.beer {
 		width: 30%;
@@ -143,6 +142,7 @@ section.leftPanel {
 		img {
 			position: absolute;
 			top: 50%;
+			left: 15px;
 			transform: translate(0%, -50%);  
 		}
 	}
@@ -184,6 +184,7 @@ section.leftPanel {
 		background: lighten(rgba(240, 222, 136, 0.96), 20);
 		border-radius: 15px;
 		padding: 10px;
+		display: none;
 	}
 
 }
@@ -288,6 +289,7 @@ section.rightPanel {
 		background: lighten(rgba(240, 222, 136, 0.96), 20);
 		border-radius: 20px;
 		margin: 15px 0;
+		display: none;
 	a {
 		text-decoration: none;
 		color: $color-green;
