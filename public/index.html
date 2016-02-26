@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<script id="beerResults" type="x-handlebar-template">
 	   <div class="breweryListing">
+	   		<button class="headerButton">
 			<div class="header">
 				<div class="beer">
 					<img src="assets/beer.png" alt="">
@@ -21,7 +22,8 @@
 					</p>
 				</div>
 			</div>
-			
+			</button>
+
 			<div class="breweryBody">
 				<p>
 					<a href="{{brewery.website}}">Brewery Website
@@ -41,7 +43,7 @@
 
    <script id="featuredResults" type="x-handlebar-template">
    		<div class="featuredBreweryListing">
-
+   	<button class="featuredHeaderButton">
 	   <div class="featuredHeaderLogo">
 	   		<div class="numberCircle">
 	   			<img class="mug" src="assets/mug.png" alt="mug logo">
@@ -56,6 +58,7 @@
 	   		</div>
 	   </div>
 
+
 		<div class="featuredBreweryHeader">
 			<h3>{{brewery.name}}</h3>
 			<p>
@@ -64,6 +67,7 @@
 				{{/if}}
 			</p>
 		</div>
+		</button>
 		
 		<div class="featuredBreweryBody">
 			<p>
