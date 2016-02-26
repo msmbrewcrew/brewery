@@ -195,10 +195,20 @@ button {
 .hidden {
   display: none; }
 
+a {
+  text-decoration: none;
+  color: #394F48;
+  font-weight: 700;
+  font-size: 12px;
+  font-size: 1.2rem; }
+  a:hover {
+    color: #320F08;
+    border-bottom: 1px dotted #320F08; }
+
 section.leftPanel {
   width: 40%;
   padding: 40px 20px;
-  background: rgba(240, 222, 136, 0.96);
+  background: rgba(240, 222, 136, 0.85);
   min-height: 100vh; }
   section.leftPanel h1 {
     font-size: 90px;
@@ -231,10 +241,15 @@ section.leftPanel {
     background-position: center center;
     background-size: 22px; }
 
+#featuredTwo {
+  display: none; }
+
 .resultsMain {
   margin-top: 45px; }
   .resultsMain .breweryListing {
     border-top: 5px solid #320F08; }
+  .resultsMain .headerButton {
+    min-height: 80px; }
   .resultsMain .header {
     padding: 15px 0; }
     .resultsMain .header:hover > .beer > img {
@@ -267,15 +282,6 @@ section.leftPanel {
       margin: 0;
       font-size: 12px;
       font-size: 1.2rem; }
-  .resultsMain a {
-    text-decoration: none;
-    color: #394F48;
-    font-weight: 700;
-    font-size: 12px;
-    font-size: 1.2rem; }
-    .resultsMain a:hover {
-      color: #320F08;
-      border-bottom: 1px dotted #320F08; }
   .resultsMain p {
     font-size: 12px;
     font-size: 1.2rem;
@@ -411,6 +417,20 @@ section.rightPanel {
     border-radius: 15px;
     padding: 10px; }
 
+footer {
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  font-size: 1.2rem;
+  background: RGBA(201, 216, 149, 1);
+  padding: 10px 20px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
 @media (max-width: 870px) {
   section.rightPanel #map {
     width: 100%;
@@ -446,5 +466,49 @@ section.rightPanel {
   h3 {
     font-size: 18px;
     font-size: 1.8rem; } }
+
+@media (max-width: 650px) {
+  footer {
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+  .featuredBreweryHeader h3 {
+    text-align: left;
+    width: 100%; }
+  .featuredBreweryHeader p {
+    width: 100%;
+    text-align: left;
+    font-size: 12px;
+    font-size: 1.2rem; }
+  .logo {
+    display: none; }
+  .innerWrapper {
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+  section.leftPanel {
+    width: 100%; }
+    section.leftPanel h1 {
+      font-size: 100px;
+      font-size: 10rem; }
+  section.rightPanel {
+    width: 100%;
+    min-height: 0px; }
+    section.rightPanel #map {
+      width: 80%;
+      margin: 0;
+      border: 5px solid #320F08; }
+    section.rightPanel .featuredResults {
+      display: none; }
+  #featuredTwo {
+    display: block;
+    background: white;
+    margin-top: 30px; }
+    #featuredTwo h2 {
+      padding-top: 20px; }
+    #featuredTwo .featuredBreweryListing {
+      padding: 20px 20px 5px 20px; }
+    #featuredTwo .featuredBreweryListing:last-of-type {
+      padding-bottom: 20px; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -86,6 +86,16 @@ button {
 	display: none;
 }
 
+a {
+	text-decoration: none;
+	color: $color-green;
+	font-weight: 700;
+	@include fontSize(12);
+	&:hover {
+		color: $color-brown;
+		border-bottom: 1px dotted $color-brown;
+	}
+}
 
 // **************************
 // Left Section Styles
@@ -94,7 +104,7 @@ button {
 section.leftPanel {
 	width: 40%;
 	padding: 40px 20px;
-	background: rgba(240, 222, 136, 0.96);
+	background: rgba(240, 222, 136, 0.85);
 	min-height: 100vh;
 	h1 {
 		@include fontSize(90);
@@ -132,10 +142,17 @@ section.leftPanel {
 	}
 }
 
+#featuredTwo {
+	display: none;
+}
+
 .resultsMain {
 	margin-top: 45px;
 	.breweryListing {
 		border-top: 5px solid $color-brown;
+	}
+	.headerButton {
+		min-height: 80px;
 	}
 	.header {
 		@extend .flex;
@@ -166,7 +183,7 @@ section.leftPanel {
 			transform: translate(0%, -50%) rotate(90deg);  	
 		}
 	}
-
+	
 	.breweryHeader {
 		width: 70%;
 		text-align: right;
@@ -177,16 +194,7 @@ section.leftPanel {
 		}
 	}
 
-	a {
-		text-decoration: none;
-		color: $color-green;
-		font-weight: 700;
-		@include fontSize(12);
-		&:hover {
-			color: $color-brown;
-			border-bottom: 1px dotted $color-brown;
-		}
-	}
+	
 
 	p {
 		@include fontSize(12);
@@ -347,6 +355,25 @@ section.rightPanel {
 		padding: 10px;
 	}
 }
+
+
+// **************************
+// Footer Styles
+// **************************
+
+footer {
+	width: 100%;
+	text-align: center;
+	@include fontSize(12);
+	background: RGBA(201, 216, 149, 1);
+	padding: 10px 20px;
+	display: flex;
+	justify-content: space-between;
+
+}
+
+
+
 // **************************
 // MEDIA QUERIES
 // **************************
@@ -408,6 +435,60 @@ section.rightPanel {
 	}
 
 	@media (max-width: 650px ){
+		footer {
+			flex-direction: column;
+		}
+		.featuredBreweryHeader h3 {
+		    text-align: left;
+		    width: 100%;
+		}
+		.featuredBreweryHeader p {
+			width: 100%;
+			text-align: left;
+			@include fontSize(12);
+		}
+		.logo {
+			display: none;
+		}
 
+		.innerWrapper {
+			flex-direction: column;
+		}
 
+		section.leftPanel {
+			width: 100%;
+			h1 {
+				@include fontSize(100);
+			}
+		}
+
+		section.rightPanel {
+			width: 100%;
+			min-height: 0px;
+			#map {
+				width: 80%;
+				margin: 0;
+				border: 5px solid $color-brown;		
+			}
+			.featuredResults {
+				display: none;
+			}
+		}	
+
+		#featuredTwo {
+			display: block;
+			background: white;
+			// padding: 20px;
+			margin-top: 30px;
+			h2 {
+				padding-top: 20px;
+			}
+			.featuredBreweryListing {
+				padding: 20px 20px 5px 20px;
+			}
+			.featuredBreweryListing:last-of-type {
+				padding-bottom: 20px;
+			}
+		}
 	}
+
