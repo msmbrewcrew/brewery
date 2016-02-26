@@ -187,8 +187,10 @@ brewApp.displayFeaturedResults = function(brewdata) {
 
 	var featuredHtml = $('#featuredResults').html();
 	var template = Handlebars.compile(featuredHtml);
+	$('#featuredTwo').append('<h2>Featured:</h2>');
 	for (var i=0; i<3; i++){
-		$('#results').append( template(brewdata[i]) );
+		$('#results').append(template(brewdata[i]) );
+		$('#featuredTwo').append(template(brewdata[i]) );
 		console.log(brewdata[i]);
 	}
 	brewApp.displayLeftResults(shuffleResults); 
@@ -245,6 +247,8 @@ brewApp.displayFeaturedResults = function(brewdata) {
 // BREW APP INIT
 brewApp.init = function() {
 		$('#userLocation').on('submit', function(event) {
+			$('.resultsMain').empty();
+			$('.results').empty();
 			event.preventDefault();
 			var userInput = $('#location').val();
 			console.log(userInput);
