@@ -135,6 +135,7 @@ brewApp.getlocation = function(query){
 };
 //update map with the lat long information that was grabbed and translated from user input and place on map using google API 
 brewApp.updateMap = function(query1, query2) {
+	       $('#map').removeClass('hidden');
 	       map = new google.maps.Map(document.getElementById('map'), {
 	         center: {lat: query1, lng: query2},
 	         zoom: 12
@@ -198,7 +199,7 @@ brewApp.displayFeaturedResults = function(brewdata) {
 		// Using a for loop, run the first 3 results through the handlebar templates
 	// Add the remaining results to the list on the left side of the screen
 	brewApp.displayLeftResults = function(brewdata) {
-
+	$('.featuredResults').removeClass('hidden');
 	var featuredHtml = $('#beerResults').html();
 	var template = Handlebars.compile(featuredHtml);
 	for (var i=3; i<brewdata.length; i++){
@@ -206,14 +207,28 @@ brewApp.displayFeaturedResults = function(brewdata) {
 		console.log(brewdata[i]);
 	}
 
+	// Find the button with a class of .headerButton, and do ... on click
 	$('button.headerButton').on('click', function() {
+		// Set a variable for the body of the brewery
+		// "this" = button, find the NEXT sibling element (can't be a child or a parent) with a class of .breweryBody
 		var body = $(this).next('.breweryBody');
+		// slideToggle the variable of body (which we've set as our .breweryBody)
 		body.slideToggle();
+		// Set a variable for the beer Bottle image
+		// find any element thats an img, and has a class of .beerBottle INSIDE the button('this')
+		var bottle = $(this).find('img.beerBottle');
+		// toggle the class of 'toggled' on the image, which we've put in our CSS as a transform
+		// for toggleClass jQuery knows that its a class so when you are recording its name you dont need the .toggled, because its already a class, and then when refrencing it on the css it knows when its added on the HTML
+
+		bottle.toggleClass('toggled');
 	});
+
 
 	$('button.featuredHeaderButton').on('click', function() {
 		var featureBody = $(this).next('.featuredBreweryBody');
 		featureBody.slideToggle();
+		var line = $(this).find('.line2');
+		line.toggleClass('visHidden');
 	});
 
 	};
